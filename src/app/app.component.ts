@@ -2,20 +2,29 @@ import { Component } from '@angular/core';
 
 export class Car {
   id: number;
-  name: String;
-  registration: String;
+  name: string;
+  registration: string;
 }
+
+const CARS:Car[] = [
+  {id:1,name:'Ford Mustang', registration:'FM11'},
+  {id:2,name:'Dodge Charger', registration:'DC22'},
+  {id:3,name:'Ford F150', registration:'FF33'},
+  {id:4,name:'Plymouth Cuda', registration:'PC44'}
+];
 
 @Component({
   selector: 'app-root',
-  template: ' <h1>{{title}}</h1><h2>details!</h2><div><label>id: </label>{{car.id}}</div><div><label>name: </label><input [(ngModel)]="car.name" placeholder = "Car Name"/>{{car.name}}</div><div><label>registration: </label> {{car.registration}}</div>',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'First try with cars!';
-  car:Car = {
-    id : 1,
-    name : 'Ford Mustang',
-    registration : 'AXN 1212'
+  cars = CARS;
+  selectedCar:Car;
+
+  onSelect(car:Car):void {
+    this.selectedCar = car;
   }
+
 }
