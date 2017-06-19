@@ -8,7 +8,7 @@ export class Car {
 
 @Component({
   selector: 'app-root',
-  template: '<h1>{{title}}</h1><h2>{{car.name}} details!</h2>',
+  template: ' <h1>{{title}}</h1><h2>details!</h2><div><label>id: </label>{{car.id}}</div><div><label>name: </label><input [(ngModel)]="car.name" placeholder = "Car Name"/>{{car.name}}</div><div><label>registration: </label> {{car.registration}}</div>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
