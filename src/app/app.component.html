@@ -5,15 +5,11 @@
 <div>
   <ul class = "cars">
     <li *ngFor = "let car of cars"
-     [class.selected]="hero === selectedHero"
+     [class.selected]="car === selectedCar"
      (click) = "onSelect(car)">
       <span class = "badge">{{car.id}}</span> {{car.name}} {{car.registration}}
     </li>
   </ul>
+
 </div>
-<div *ngIf = "selectedCar">
-<h2>{{selectedCar.name}} details!</h2>
-<div><label>id: </label>{{selectedCar.id}}</div>
-<div><label>name: </label><input [(ngModel)]="selectedCar.name" placeholder = "Car Name"/> {{selectedCar.name}}</div>
-<div><label>registration: </label><input [(ngModel)]="selectedCar.registration"/> {{selectedCar.registration}}</div>
-</div>
+<app-car-details [car]="selectedCar "></app-car-details>

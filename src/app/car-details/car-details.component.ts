@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {Car} from '../car';
 
 @Component({
   selector: 'app-car-details',
   templateUrl: './car-details.component.html',
   styleUrls: ['./car-details.component.css']
 })
-export class CarDetailsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class CarDetailsComponent {
+  @Input() car: Car;
 
 }

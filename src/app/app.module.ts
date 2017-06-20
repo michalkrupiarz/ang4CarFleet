@@ -8,11 +8,11 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CarDetailsComponent
-
   ],
   imports: [
     BrowserModule,

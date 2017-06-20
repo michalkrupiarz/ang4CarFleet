@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
+import {Car} from './car';
 
-export class Car {
-  id: number;
-  name: string;
-  registration: string;
-}
+
 
 const CARS:Car[] = [
   {id:1,name:'Ford Mustang', registration:'FM11'},
