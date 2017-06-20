@@ -1,15 +1,5 @@
 
 <h1>{{title}}</h1>
 
-<h2> List of Cars</h2>
-<div>
-  <ul class = "cars">
-    <li *ngFor = "let car of cars"
-     [class.selected]="car === selectedCar"
-     (click) = "onSelect(car)">
-      <span class = "badge">{{car.id}}</span> {{car.name}} {{car.registration}}
-    </li>
-  </ul>
-
-</div>
-<app-car-details [car]="selectedCar "></app-car-details>
+<a routerLink="/cars">Cars</a>
+  <router-outlet></router-outlet>
