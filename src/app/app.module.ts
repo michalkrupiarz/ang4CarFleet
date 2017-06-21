@@ -40,6 +40,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         {
           path: 'cars',
           component: CarsComponent
+        },
+        {
+          path: 'detail/:id',
+          component: CarDetailsComponent
         }
       ]
     )

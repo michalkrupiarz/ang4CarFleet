@@ -16,6 +16,7 @@ export class CarsComponent implements OnInit {
   constructor(private carService:CarService){   }
 
   getCars(): void {
+    
    this.carService.getCars().then(cars => this.cars = cars);
   }
 

@@ -3,9 +3,9 @@ This is dashboard!!!
 I`ve changed sth but it worsk, miracle! ;D
 <h3>Top Cars</h3>
 <div class="grid grid-pad">
-  <div *ngFor = "let car of cars" class ="col-1-4">
+  <a *ngFor = "let car of cOd" [routerLink] = "['/detail',car.id]" class ="col-1-4">
     <div class = "module car">
       <h4>{{car.name}}</h4>
     </div>
-  </div>
+  </a>
 </div>
