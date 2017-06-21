@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { CarsComponent } from './cars/cars.component';
 import {CarService} from './car.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -17,7 +18,8 @@ import {CarService} from './car.service';
   declarations: [
     AppComponent,
     CarDetailsComponent,
-    CarsComponent
+    CarsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,16 @@ import {CarService} from './car.service';
     HttpModule,
     RouterModule.forRoot(
       [
+
+        {
+          path: '',
+          redirectTo: '/dashboard',
+          pathMatch: 'full'
+        },
+        {
+          path: 'dashboard',
+          component: DashboardComponent
+        },
         {
           path: 'cars',
           component: CarsComponent
