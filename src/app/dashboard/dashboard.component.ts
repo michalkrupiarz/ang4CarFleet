@@ -14,7 +14,7 @@ cars: Car[]=[];
 
 constructor (private carService:CarService){}
 ngOnInit():void {
-    this.carService.getCars().then(cOd=>this.cOd=cOd.slice(0,3));
+    this.carService.getCars().then(cOd=>this.cOd=cOd.slice(0,6));
 
 }
 
