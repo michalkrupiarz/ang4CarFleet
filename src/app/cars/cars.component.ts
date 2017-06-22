@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 import {Car} from '../car';
 import {CarService} from '../car.service';
 
@@ -13,10 +15,10 @@ export class CarsComponent implements OnInit {
   title = 'First try with cars!';
   selectedCar:Car;
 
-  constructor(private carService:CarService){   }
+  constructor(private carService:CarService,private router:Router){   }
 
   getCars(): void {
-    
+
    this.carService.getCars().then(cars => this.cars = cars);
   }
 
@@ -26,6 +28,10 @@ export class CarsComponent implements OnInit {
 
   onSelect(car: Car): void {
    this.selectedCar = car;
+  }
+
+  gotoDetail():void{
+    this.router.navigate(['detail',this.selectedCar.id]);
   }
 
 
