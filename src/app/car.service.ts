@@ -1,14 +1,37 @@
 import { Injectable } from '@angular/core';
+import {Headers,Http} from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
 import {Car} from './car';
 import {CARS} from './mock-car';
 
 @Injectable()
 export class CarService {
+
+  private carsUrl = 'api/cars';  // URL to web api
+
+  constructor(private http: Http) { }
+
   getCars():Promise<Car[]>{
-    return Promise.resolve(CARS);
+    return this.http.get(this.carsUrl)
+    .toPromise()
+    .then(response=>response.json().data as Car[])
+    .catch(this.handleError);
   }
+
+  private handleError(error: any):Promise<any>{
+    console.error('An error occurred ',error);
+    return Promise.reject(error.message || error);
+  }
+
   getCar(id:number):Promise<Car>{
-    return this.getCars().then(CARS=>CARS.find(Car => Car.id ===id));
+    const url = '${this.carsUrl}/${car.id}';
+    console.log(url, 'this is url');
+    return this.http.get(url)
+    .toPromise()
+    .then(response=>response.json().data as Car)
+    .catch(this.handleError);
   }
 
 }
