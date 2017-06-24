@@ -26,11 +26,15 @@ export class CarDetailsComponent implements OnInit{
   ) {}
 
   ngOnInit():void{
+  
     this.route.params
       .switchMap((params: Params) => this.carService.getCar(+params['id']))
       .subscribe(car => this.car = car);
   }
-
+  save():void{
+    this.carService.update(this.car)
+    .then(()=>this.goBack);
+  }
   goBack():void {
     this.location.back();
   }

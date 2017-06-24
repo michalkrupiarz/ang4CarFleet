@@ -2,6 +2,15 @@
 {{title}}
 
 <h2> List of Cars</h2>
+
+<div>
+  <label>Car name:</label> <input #carName/>
+  <label>Car registration:</label> <input #carRegistration/>
+  <button (click)="add(carName.value); carName.value='';add(carRegistration.value);carRegistration.value=''">
+    Add
+  </button>
+</div>
+
 <div>
   <ul class = "cars">
 
